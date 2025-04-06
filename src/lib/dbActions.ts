@@ -126,6 +126,20 @@ export async function editContact(contact: Contact) {
       owner: contact.owner,
     },
   });
+}
 
+/**
+ * Create a note for a contact.
+ * @param note, an object with the following properties: note, createdAt, contactId, owner.
+ */
+export async function addNote(note: { note: string; contactId: number; owner: string }) {
+  await prisma.note.create({
+    data: {
+      note: note.note,
+      contactId: note.contactId,
+      owner: note.owner,
+    },
+  });
+  // After adding, redirect to the list page
   redirect('/list');
 }

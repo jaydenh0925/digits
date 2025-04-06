@@ -1,40 +1,40 @@
 'use client';
 
 import { Card, Image, ListGroup } from 'react-bootstrap';
+// import { Contact } from '../lib/validationSchemas';
 import Link from 'next/link';
 import { Contact, Note } from '@prisma/client';
 import NoteItem from '@/components/NoteItem';
-import AddNoteForm from './AddNoteForm';
 
 /* Renders a single row in the List Stuff table. See list/page.tsx. */
-const ContactCard = ({ contacts, notes } : { contacts: Contact; notes: Note[] }) => (
+const ContactCardAdmin = ({ contact, notes } : { contact: Contact; notes: Note[] }) => (
   <Card className="h-100">
     <Card.Header>
-      <Image src={contacts.image} alt="Contact Image" width={75} height={75} />
+      <Image src={contact.image} alt="Contact Image" width={75} height={75} />
       <Card.Title>
-        {contacts.firstName}
+        {contact.firstName}
         &nbsp;
-        { contacts.lastName }
+        { contact.lastName }
       </Card.Title>
       <Card.Subtitle>
-        { contacts.address }
+        { contact.address }
       </Card.Subtitle>
     </Card.Header>
     <Card.Body>
       <Card.Text>
-        { contacts.description }
+        { contact.description }
       </Card.Text>
       <ListGroup variant="flush">
         {notes.map((note) => (
-          <NoteItem key={note.id} note={note}/>
+          <NoteItem key={note.id} note={note} />
         ))}
-        </ListGroup>
-        <AddNoteForm contact = { contacts } />
+      </ListGroup>
+      <p className="blockquote-footer">{contact.owner}</p>
     </Card.Body>
     <Card.Footer>
-      <Link href={`edit/${contacts.id}`}>Edit</Link>
+      <Link href={`edit/${contact.id}`}>Edit</Link>
     </Card.Footer>
   </Card>
 );
 
-export default ContactCard;
+export default ContactCardAdmin;

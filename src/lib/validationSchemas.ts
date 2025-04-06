@@ -43,3 +43,9 @@ export interface Contact {
   description: string;
   owner: string,
 }
+
+export const AddNoteSchema = Yup.object({
+  note: Yup.string().required(),
+  contactId: Yup.number().required(),
+  owner: Yup.string().required(),
+});
