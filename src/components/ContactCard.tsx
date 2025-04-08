@@ -26,10 +26,10 @@ const ContactCard = ({ contacts, notes } : { contacts: Contact; notes: Note[] })
       </Card.Text>
       <ListGroup variant="flush">
         {notes.map((note) => (
-          <NoteItem key={note.id} note={note}/>
+          <NoteItem key={note.id} note={note} />
         ))}
-        </ListGroup>
-        <AddNoteForm contact = { contacts } />
+      </ListGroup>
+      <AddNoteForm contact={contacts} />
     </Card.Body>
     <Card.Footer>
       <Link href={`edit/${contacts.id}`}>Edit</Link>

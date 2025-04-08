@@ -20,6 +20,8 @@ To keep this codebase simple and small, some important capabilities are intentio
 
 Examples of the these capabilities will be provided elsewhere.
 
+<img src="./doc/Screenshot 2025-04-07 221121.png">
+
 ## Installation
 
 First, [install PostgreSQL](https://www.postgresql.org/download/). Then create a database for your application.
@@ -246,17 +248,20 @@ When you retrieve the app at http://localhost:3000, this is what should be displ
 
 The next step is to use the Login menu to either Login to an existing account or register a new account.
 
+
 #### Login page
 
 Clicking on the Login link, then on the Sign In menu item displays this page:
 
 ![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/signin-page.png)
 
+
 #### Register page
 
 Alternatively, clicking on the Login link, then on the Sign Up menu item displays this page:
 
 ![](https://github.com/ics-software-engineering/nextjs-application-template/raw/main/doc/register-page.png)
+
 
 #### Landing (after Login) page, non-Admin user
 
